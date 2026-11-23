@@ -1,0 +1,47 @@
+{
+  "symbol": "TSLA",
+  "generated_at_utc": "2026-11-23T01:49:09.864495+00:00",
+  "as_of_date": "2026-11-20",
+  "target_date": "2026-11-23",
+  "currency": "USD",
+  "last_actual_close": 345.82000732421875,
+  "predicted_close": 347.6774088619603,
+  "actual_close": null,
+  "absolute_error_usd": null,
+  "error_rate_percent": null,
+  "accuracy_percent": null,
+  "selected_alpha": 1000.0,
+  "configuration": {
+    "feature_set": "relative_volume",
+    "target": "return",
+    "window": null,
+    "alpha": 1000.0
+  },
+  "training_rows": 1234,
+  "last_training_target_date": "2026-11-20",
+  "features": {
+    "Return1D": -0.07636012942563364,
+    "LagReturn1D": -0.0242624766209123,
+    "Return5D": -0.11378195314845574,
+    "Return20D": -0.07092577994171467,
+    "PriceToSMA5": -0.07227167724761108,
+    "PriceToSMA20": -0.1012958505797712,
+    "Volatility20D": 0.04032578253284422,
+    "VolumeRatio20": 0.25253572276252134,
+    "RangeRatio": 0.08544912869324725,
+    "GapReturn": -0.010630087196922045,
+    "IntradayReturn": -0.0664362655242724
+  },
+  "feature_csv_sha256": "bea56a0061f73f8540224ac33ae12434427fae78bd19e2ed39213555a865ebe2",
+  "daily_csv_sha256": "976ffe9cf333fa765c4d7d146ebdd7cf6d81efe3dc18526de53426fcae3769c8",
+  "calendar_source": "https://www.nasdaq.com/market-activity/stock-market-holiday-schedule",
+  "notes": [
+    "Configuration is taken from historical validation; no new tuning on test results.",
+    "This separate forecast model uses the validation-selected historical training window.",
+    "It does not overwrite ridge_model.json or change historical test metrics.",
+    "The latest unlabeled input is used for inference, not as a fabricated training target.",
+    "Target is the next scheduled market date after the data snapshot, not after the computer date.",
+    "Regular market holidays are excluded; unexpected exchange closures cannot be predicted.",
+    "Future actual close, error and accuracy remain unknown until the target close is observed."
+  ]
+}

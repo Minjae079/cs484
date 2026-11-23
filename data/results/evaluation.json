@@ -1,0 +1,111 @@
+{
+  "symbol": "TSLA",
+  "generated_at_utc": "2026-11-23T01:49:07.598962+00:00",
+  "feature_csv_sha256": "bea56a0061f73f8540224ac33ae12434427fae78bd19e2ed39213555a865ebe2",
+  "selected_config": {
+    "feature_set": "relative_volume",
+    "target": "return",
+    "window": null,
+    "alpha": 1000.0
+  },
+  "features": [
+    "Return1D",
+    "LagReturn1D",
+    "Return5D",
+    "Return20D",
+    "PriceToSMA5",
+    "PriceToSMA20",
+    "Volatility20D",
+    "VolumeRatio20",
+    "RangeRatio",
+    "GapReturn",
+    "IntradayReturn"
+  ],
+  "selected_alpha": 1000.0,
+  "selection_metric": "Mean validation MAPE across three sequential folds; MAE breaks ties",
+  "selected_validation_metrics": {
+    "feature_set": "relative_volume",
+    "target": "return",
+    "window": null,
+    "alpha": 1000.0,
+    "ValidationMAPE": 2.8891529513177976,
+    "ValidationMAE": 8.244253231062217,
+    "ValidationMSE": 130.95920591068878,
+    "Fold1MAPE": 2.5488208276245214,
+    "Fold2MAPE": 3.2728789695823934,
+    "Fold3MAPE": 2.8457590567464783
+  },
+  "validation_candidates": 198,
+  "validation_folds": [
+    {
+      "first_validation_feature_date": "2023-12-07",
+      "last_validation_feature_date": "2024-08-05",
+      "first_validation_target_date": "2023-12-08",
+      "last_validation_target_date": "2024-08-06",
+      "rows": 165
+    },
+    {
+      "first_validation_feature_date": "2024-08-06",
+      "last_validation_feature_date": "2025-04-01",
+      "first_validation_target_date": "2024-08-07",
+      "last_validation_target_date": "2025-04-02",
+      "rows": 164
+    },
+    {
+      "first_validation_feature_date": "2025-04-02",
+      "last_validation_feature_date": "2025-11-25",
+      "first_validation_target_date": "2025-04-03",
+      "last_validation_target_date": "2025-11-26",
+      "rows": 165
+    }
+  ],
+  "development_rows": 987,
+  "test_rows": 247,
+  "refit_every": 20,
+  "test_target_dates": {
+    "first": "2025-11-28",
+    "last": "2026-11-20"
+  },
+  "test_metrics": {
+    "Ridge": {
+      "MSE": 126.3851681522654,
+      "RMSE": 11.242115821866692,
+      "MAPE": 2.1842602502135624,
+      "CustomAccuracyPercent": 97.81573974978643,
+      "MAE": 8.509030600413373,
+      "R2": 0.9134718110556677
+    },
+    "PreviousRidge": {
+      "MSE": 127.67849759782492,
+      "RMSE": 11.299491032689255,
+      "MAPE": 2.204565971636777,
+      "CustomAccuracyPercent": 97.79543402836322,
+      "MAE": 8.614860307644461,
+      "R2": 0.9125863475454414
+    },
+    "PersistenceBaseline": {
+      "MSE": 127.60932728410265,
+      "RMSE": 11.29642984681898,
+      "MAPE": 2.18730535222554,
+      "CustomAccuracyPercent": 97.81269464777446,
+      "MAE": 8.530769502585716,
+      "R2": 0.9126337042255218
+    }
+  },
+  "improvement_over_previous_percent": {
+    "MAE": 1.2284552906467803,
+    "MAPE": 0.9210756985484342,
+    "MSE": 1.012957913738448
+  },
+  "previous_alpha": 0.31622776601683794,
+  "protocol": [
+    "Final 20% region is excluded from configuration selection.",
+    "Each validation fold and test period refits every 20 observations using only then-known labels.",
+    "All scaling is fitted on each training window only; there is no shuffling.",
+    "Chosen feature set, target, training window and alpha are frozen before final-region comparison.",
+    "During test, earlier realized test outcomes may be used for later scheduled refits; future labels cannot.",
+    "PreviousRidge exactly reproduces the prior fixed five-feature, single-validation MSE model.",
+    "This test period has been seen in earlier project iterations: comparisons are descriptive, not a fresh independent confirmation.",
+    "The accuracy display is 100 - MAPE, a custom similarity score, not a success probability."
+  ]
+}

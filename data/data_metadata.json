@@ -1,0 +1,35 @@
+{
+  "symbol": "TSLA",
+  "provider": "Yahoo Finance",
+  "requested_range": "5y",
+  "source_url": "https://query1.finance.yahoo.com/v8/finance/chart/TSLA?range=5y&interval=1d",
+  "source_page": "https://finance.yahoo.com/quote/TSLA/history/",
+  "retrieved_at_utc": "2026-11-23T01:49:01.127859+00:00",
+  "raw_json_sha256": "ccfc25139828dacf8c01e22ede53c10232d579266ddcadd49e29bb6f72cc1c41",
+  "observations": 1255,
+  "first_date": "2021-11-22",
+  "last_date": "2026-11-20",
+  "columns": [
+    "Date",
+    "Open",
+    "High",
+    "Low",
+    "Close",
+    "Volume",
+    "AdjustedClose"
+  ],
+  "currency": "USD",
+  "exchange_timezone": "America/New_York",
+  "downloaded_observations": 1255,
+  "skipped_missing": 0,
+  "skipped_incomplete": 0,
+  "notes": [
+    "Rolling 5-year daily history; the date range changes with retrieval date.",
+    "Regular-session daily data; not a real-time trading feed.",
+    "Provider Close and AdjustedClose are kept separately; do not mix adjustment bases.",
+    "Current-day bars excluded until 15 minutes after the provider regular-session close.",
+    "Missing OHLCV/adjusted-close observations skipped and counted; no imputation.",
+    "A last observation older than seven calendar days fails freshness validation.",
+    "This collection stage downloads data; model fitting follows in later stages."
+  ]
+}
